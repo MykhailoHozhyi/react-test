@@ -1,18 +1,24 @@
-import { Alert } from './Alert';
-import { BookList } from './BookList';
-import Product from './Product';
-import { UserMenu } from './UserMenu';
+import { Alert } from '../Alert/Alert';
+import { BookList } from '../BookList/BookList';
+import LoginForm from '../LoginForm/LoginForm';
+import Product from '../Product/Product';
+import SearchBar from '../SearchBar/SearchBar';
+import { UserMenu } from '../UserMenu/UserMenu';
 
-const favouriteBooks = [
-  { id: 'id-1', name: 'JS for beginners' },
-  { id: 'id-2', name: 'React basics' },
-  { id: 'id-3', name: 'React Router overview' },
-];
+// const favouriteBooks = [
+//   { id: 'id-1', name: 'JS for beginners' },
+//   { id: 'id-2', name: 'React basics' },
+//   { id: 'id-3', name: 'React Router overview' },
+// ];
 
 export default function App() {
+  function handleLogin(userData) {
+    console.log('userData: ', userData);
+  }
+
   return (
     <div>
-      <h1>Best selling</h1>
+      {/* <h1>Best selling</h1>
 
       <Product
         name="Tacos With Lime"
@@ -43,7 +49,11 @@ export default function App() {
         Please update your profile contact information
       </Alert>
 
-      <UserMenu name="Mykhailo Hozhyi" />
+      <UserMenu name="Mykhailo Hozhyi" /> */}
+
+      <LoginForm onLogin={handleLogin} />
+
+      <SearchBar />
     </div>
   );
 }
