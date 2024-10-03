@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { Alert } from '../Alert/Alert';
 import { BookList } from '../BookList/BookList';
+import LangSwitcher from '../LangSwitcher/LangSwitcher';
 import LoginForm from '../LoginForm/LoginForm';
 import Product from '../Product/Product';
 import SearchBar from '../SearchBar/SearchBar';
 import { UserMenu } from '../UserMenu/UserMenu';
+import SelectCoffee from '../SelectCoffee/SelectCoffee';
+import Checkbox from '../Checkbox/Checkbox';
 
 // const favouriteBooks = [
 //   { id: 'id-1', name: 'JS for beginners' },
@@ -15,6 +19,12 @@ export default function App() {
   function handleLogin(userData) {
     console.log('userData: ', userData);
   }
+
+  const [lang, setLang] = useState('uk');
+
+  const [coffeeSize, setCoffeeSize] = useState('md');
+
+  const [hasAccepted, setHasAccepted] = useState(false);
 
   return (
     <div>
@@ -54,6 +64,12 @@ export default function App() {
       <LoginForm onLogin={handleLogin} />
 
       <SearchBar />
+
+      <LangSwitcher value={lang} onSelect={setLang} />
+
+      <SelectCoffee value={coffeeSize} onChecked={setCoffeeSize} />
+
+      <Checkbox checked={hasAccepted} onChecked={setHasAccepted} />
     </div>
   );
 }
