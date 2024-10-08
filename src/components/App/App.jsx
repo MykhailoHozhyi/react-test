@@ -8,6 +8,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import { UserMenu } from '../UserMenu/UserMenu';
 import SelectCoffee from '../SelectCoffee/SelectCoffee';
 import Checkbox from '../Checkbox/Checkbox';
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
 
 // const favouriteBooks = [
 //   { id: 'id-1', name: 'JS for beginners' },
@@ -59,7 +60,7 @@ export default function App() {
         Please update your profile contact information
       </Alert>
 
-      <UserMenu name="Mykhailo Hozhyi" /> */}
+      <UserMenu name="Mykhailo Hozhyi" />
 
       <LoginForm onLogin={handleLogin} />
 
@@ -69,7 +70,9 @@ export default function App() {
 
       <SelectCoffee value={coffeeSize} onChecked={setCoffeeSize} />
 
-      <Checkbox checked={hasAccepted} onChecked={setHasAccepted} />
+      <Checkbox checked={hasAccepted} onChecked={setHasAccepted} /> */}
+
+      <FeedbackForm />
     </div>
   );
 }
