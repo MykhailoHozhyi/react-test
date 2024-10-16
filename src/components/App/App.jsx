@@ -32,23 +32,23 @@ export default function App() {
 
   // const [hasAccepted, setHasAccepted] = useState(false);
 
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  // const [articles, setArticles] = useState([]);
+  // const [loading, setLoading] = useState(false);
+  // const [error, setError] = useState(false);
 
-  async function handleSearch(topic) {
-    try {
-      setArticles([]);
-      setError(false);
-      setLoading(true);
-      const data = await fetchArticlesWithTopic(topic);
-      setArticles(data);
-    } catch (error) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  }
+  // async function handleSearch(topic) {
+  //   try {
+  //     setArticles([]);
+  //     setError(false);
+  //     setLoading(true);
+  //     const data = await fetchArticlesWithTopic(topic);
+  //     setArticles(data);
+  //   } catch (error) {
+  //     setError(true);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // }
 
   return (
     <div>
@@ -95,7 +95,7 @@ export default function App() {
 
       <Checkbox checked={hasAccepted} onChecked={setHasAccepted} /> 
 
-      <FeedbackForm /> */}
+      <FeedbackForm />
 
       <div>
         <h1>Latest articles</h1>
@@ -105,7 +105,7 @@ export default function App() {
           <p>Whoops, something went wrong! Please try reloading this page!</p>
         )}
         {articles.length > 0 && <ArticleList items={articles} />}
-      </div>
+      </div> */}
     </div>
   );
 }
