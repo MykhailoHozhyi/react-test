@@ -14,6 +14,15 @@ import ArticleList from '../ArticleList/ArticleList';
 import { Audio } from 'react-loader-spinner';
 import { fetchArticlesWithTopic } from '../../articles-api';
 import SearchForm from '../SearchForm/SearchForm';
+import { Link, Route, Routes } from 'react-router-dom';
+import Home from '../../pages/Home/Home';
+import About from '../../pages/About/About';
+import Products from '../../pages/Products/Products';
+import NotFound from '../../pages/NotFound/NotFound';
+import ProductDetails from '../../pages/ProductDetails/ProductDetails';
+import Mission from '../Mission/Mission';
+import Team from '../Team/Team';
+import Reviews from '../Reviews/Reviews';
 
 // const favouriteBooks = [
 //   { id: 'id-1', name: 'JS for beginners' },
@@ -106,6 +115,25 @@ export default function App() {
         )}
         {articles.length > 0 && <ArticleList items={articles} />}
       </div> */}
+
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/products">Products</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}>
+          <Route path="mission" element={<Mission />} />
+          <Route path="team" element={<Team />} />
+          <Route path="reviews" element={<Reviews />} />
+        </Route>
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:productId" element={<ProductDetails />} />
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }
